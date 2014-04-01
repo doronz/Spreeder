@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="unspecified" >
+        <source path="C:\Android Apps\Spree\spreeder\build\exploded-aar\Spree\comandrewgiangtextspritzer\unspecified\res" >
+            <file
+                path="C:\Android Apps\Spree\spreeder\build\exploded-aar\Spree\comandrewgiangtextspritzer\unspecified\res\values\values.xml"
+                qualifiers="" >
+                <declare-styleable name="SpritzerTextView" >
+                    <attr
+                        name="clickControls"
+                        format="boolean" />
+                </declare-styleable>
+
+                <string name="app_name" >TextSpritzer
+                </string>
+
+                <style name="PivotLetter" >
+                    <item name="android:textColor">
+@color/pivot_text
+                    </item>
+                </style>
+
+                <color name="pivot_text" >#fff7000e
+                </color>
+            </file>
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Android Apps\Spree\spreeder\src\main\res" >
+            <file
+                name="cycle"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\anim\cycle.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="shake"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\anim\shake.xml"
+                qualifiers=""
+                type="anim" />
+            <file
+                name="selectable_background_cardbank"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable\selectable_background_cardbank.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_discard.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_new.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_paste.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_replay"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_replay.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_rewind"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_rewind.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_settings"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_settings.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_muted"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_volume_muted.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_on"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_action_volume_on.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_discard.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_new.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_paste.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_replay"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_replay.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_rewind"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_rewind.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_settings"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_settings.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_muted"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_volume_muted.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_on"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_action_volume_on.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="background_holo_dark"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-nodpi\background_holo_dark.png"
+                qualifiers="nodpi"
+                type="drawable" />
+            <file
+                name="background_holo_light"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-nodpi\background_holo_light.png"
+                qualifiers="nodpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_discard.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_new.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_paste.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_replay"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_replay.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_rewind"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_rewind.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_settings"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_settings.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_muted"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_volume_muted.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_on"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_action_volume_on.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_menu_moreoverflow_normal_holo_light"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xhdpi\ic_menu_moreoverflow_normal_holo_light.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_discard.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_new.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_paste.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_replay"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_replay.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_rewind"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_rewind.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_settings"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_settings.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_muted"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_volume_muted.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_volume_on"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_action_volume_on.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="web_hi_res_512"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\drawable-xxhdpi\web_hi_res_512.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="activity_about"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\activity_about.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\activity_paste.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_sources"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\activity_sources.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="chapter_picker_dialog"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\chapter_picker_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="splash_view"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\splash_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout-land\activity_main.xml"
+                qualifiers="land"
+                type="layout" />
+            <file
+                name="about"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\menu\about.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="main"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\menu\main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="paste"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\menu\paste.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="sources"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\menu\sources.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values\colors.xml"
+                qualifiers="" >
+                <color name="grey" >#D0D0D0
+                </color>
+                <color name="green" >#4ac925
+                </color>
+                <color name="blue" >#56B8D8
+                </color>
+                <color name="skyblue" >#00d5f2
+                </color>
+                <color name="golden" >#f2a400
+                </color>
+                <color name="white" >#F0F0F0
+                </color>
+                <color name="black" >#4C4C4C
+                </color>
+                <color name="red" >#e00707
+                </color>
+                <color name="holoblue" >#ff33b6ea
+                </color>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="done" >Done
+                </string>
+                <string name="resetText" >Reset Text
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="addToSpree" >Add to Spree
+                </string>
+                <string name="timeLeft" >Time Left
+                </string>
+                <string name="rewind" >Rewind
+                </string>
+                <string name="pasteText" >Paste Text
+                </string>
+                <string name="s_logo" >S Logo
+                </string>
+                <string name="addFile" >Add EPUB
+                </string>
+                <string name="start" >Read!
+                </string>
+                <string name="ready" >Ready!
+                </string>
+                <string name="welcome" >Welcome to Spree! Add some text to being speed reading!
+                </string>
+                <string name="title_activity_paste" >Add Your Text
+                </string>
+                <string name="title_activity_sources" >SourcesActivity
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="title_activity_about" >About
+                </string>
+                <string name="enableSpritzText" >Red Letter Alignment
+                </string>
+                <string name="wpm" >250 WPM
+                </string>
+                <string name="pasteHint" >Type or paste your text here.
+                </string>
+                <string name="color_stripe" >Color Stripe
+                </string>
+                <string name="sourcesText" >Reading Material
+                </string>
+                <string name="addText" >Add Text
+                </string>
+                <string name="changeChapter" >Change Chapter
+                </string>
+                <string name="desc" >Description
+                </string>
+                <string name="pause" >Pause
+                </string>
+                <string name="wordCount" >wordCount
+                </string>
+                <string name="title" >Title
+                </string>
+                <string name="app_name" >Spree
+                </string>
+                <string name="about_how_to" >This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub file. 
+                </string>
+                <string name="clearText" >Clear Text
+                </string>
+                <string name="author" >Developed by Doron Zehavi, All Rights Reserved, 2014
+                </string>
+                <string name="overflow" >Menu Overflow
+                </string>
+                <string name="reset" >Reset
+                </string>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values\strings_activity_settings.xml"
+                qualifiers="" >
+                <string name="title_activity_settings" >Settings
+                </string>
+                <string name="backgroundColor" >Dark Background
+                </string>
+                <string name="time_left" >Show Time Left
+                </string>
+                <string name="pref_fontSize" >Font Size
+                </string>
+                <string name="pref_textChunkDialog" >Choose Chunk Size
+                </string>
+
+                <string-array name="pref_fontSelectionValues" >
+                    <item name="Large">
+3
+                    </item>
+                    <item name="Medium">
+2
+                    </item>
+                    <item name="Small">
+1
+                    </item>
+                </string-array>
+
+                <string name="pref_textChunk" >Word Chunks
+                </string>
+                <string name="header_appearance" >Appearance
+                </string>
+
+                <string-array name="pref_textAlignment" >
+                    <item name="Center">
+Center
+                    </item>
+                    <item name="Left">
+Left
+                    </item>
+                    <item name="Right">
+Right
+                    </item>
+                </string-array>
+
+                <string name="pref_textAlignmentDialog" >Set text alignment.
+                </string>
+
+                <string-array name="pref_fontSelection" >
+                    <item name="Large">
+Large
+                    </item>
+                    <item name="Medium">
+Medium
+                    </item>
+                    <item name="Small">
+Small
+                    </item>
+                </string-array>
+
+                <string name="variable_wpm" >Variable WPM
+                </string>
+
+                <string-array name="pref_textAlignmentValues" >
+                    <item name="Center">
+3
+                    </item>
+                    <item name="Left">
+2
+                    </item>
+                    <item name="Right">
+1
+                    </item>
+                </string-array>
+
+                <string name="backgroundDark" >Change to dark background.
+                </string>
+                <string name="time_left_summary" >Show how much time until you are finished reading.
+                </string>
+
+                <string-array name="pref_textChunkValues" >
+                    <item name="3">
+3
+                    </item>
+                    <item name="2">
+2
+                    </item>
+                    <item name="1">
+1
+                    </item>
+                </string-array>
+
+                <string name="pref_fontSizeDialog" >Select Font Size
+                </string>
+
+                <string-array name="pref_textChunk" >
+                    <item name="3">
+Three
+                    </item>
+                    <item name="2">
+Two
+                    </item>
+                    <item name="1">
+One
+                    </item>
+                </string-array>
+
+                <string name="backgroundLight" >Change to light background.
+                </string>
+                <string name="pref_textAlignment" >Text Alignment
+                </string>
+                <string name="variable_wpm_summary" >Longer words will appear on the screen for a longer time.
+                </string>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="Dark"
+                    parent="AppBaseTheme" >
+                    <item name="android:windowActionBar">
+false
+                    </item>
+                    <item name="android:windowTitleSize">
+0dp
+                    </item>
+                    <item name="android:background">
+#FFFFFFFF
+                    </item>
+                    <item name="android:textColor">
+#00000000
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values-sw720dp-land\dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values-v14\styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Android Apps\Spree\spreeder\src\main\res\values-w820dp\dimens.xml"
+                qualifiers="w820dp" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+            <file
+                name="pref_general"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\xml\pref_general.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_headers"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\xml\pref_headers.xml"
+                qualifiers=""
+                type="xml" />
+        </source>
+        <source path="C:\Android Apps\Spree\spreeder\build\res\rs\debug" />
+        <source path="C:\Android Apps\Spree\spreeder\build\res\generated\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Android Apps\Spree\spreeder\src\debug\res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,64 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+
+    <!-- Appearance settings -->
+    <string name="backgroundColor">Dark Background</string>
+    <string name="backgroundDark">Change to dark background.</string>
+    <string name="backgroundLight">Change to light background.</string>
+    <string name="header_appearance">Appearance</string>
+
+    <!-- Font settings -->
+    <string-array name="pref_fontSelection">
+        <item name="Large">Large</item>
+        <item name="Medium">Medium</item>
+        <item name="Small">Small</item>
+    </string-array>
+    <string-array name="pref_fontSelectionValues">
+        <item name="Large">3</item>
+        <item name="Medium">2</item>
+        <item name="Small">1</item>
+    </string-array>
+
+    <string name="pref_fontSizeDialog">Select Font Size</string>
+    <string name="pref_fontSize">Font Size</string>
+
+    <!-- Functionality -->
+    <!-- Text Alignment settings -->
+    <string-array name="pref_textAlignment">
+        <item name="Center">Center</item>
+        <item name="Left">Left</item>
+        <item name="Right">Right</item>
+    </string-array>
+    <string-array name="pref_textAlignmentValues">
+        <item name="Center">3</item>
+        <item name="Left">2</item>
+        <item name="Right">1</item>
+    </string-array>
+    <string name="pref_textAlignmentDialog">Set text alignment.</string>
+    <string name="pref_textAlignment">Text Alignment</string>
+
+    <!-- Chunk settings -->
+    <string-array name="pref_textChunk">
+        <item name="3">Three</item>
+        <item name="2">Two</item>
+        <item name="1">One</item>
+    </string-array>
+    <string-array name="pref_textChunkValues">
+        <item name="3">3</item>
+        <item name="2">2</item>
+        <item name="1">1</item>
+    </string-array>
+    <string name="pref_textChunkDialog">Choose Chunk Size</string>
+    <string name="pref_textChunk">Word Chunks</string>
+    
+    
+    <string name="variable_wpm_summary">Longer words will appear on the screen for a longer time.</string>
+    <string name="variable_wpm">Variable WPM</string>
+    <string name="time_left_summary">Show how much time until you are finished reading.</string>
+    <string name="time_left">Show Time Left</string>
+
+</resources>

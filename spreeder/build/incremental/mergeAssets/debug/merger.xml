@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="unspecified" >
+        <source path="C:\Android Apps\Spree\spreeder\build\exploded-aar\Spree\comandrewgiangtextspritzer\unspecified\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Android Apps\Spree\spreeder\src\main\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Android Apps\Spree\spreeder\src\debug\assets" />
+    </dataSet>
+
+</merger>

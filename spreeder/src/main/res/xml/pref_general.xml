@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Appearance" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="background_checkbox"
+            android:summaryOff="@string/backgroundDark"
+            android:summaryOn="@string/backgroundLight"
+            android:title="@string/backgroundColor" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/pref_fontSizeDialog"
+            android:entries="@array/pref_fontSelection"
+            android:entryValues="@array/pref_fontSelectionValues"
+            android:key="pref_fontSize"
+            android:summary="Choose font size."
+            android:title="@string/pref_fontSize" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="time_left_checkbox"
+            android:summary="@string/time_left_summary"
+            android:title="@string/time_left" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Functionality" >
+        <ListPreference
+            android:defaultValue="3"
+            android:dialogTitle="@string/pref_textAlignmentDialog"
+            android:entries="@array/pref_textAlignment"
+            android:entryValues="@array/pref_textAlignmentValues"
+            android:key="pref_textAlignment"
+            android:summary="Change the text alignment."
+            android:title="@string/pref_textAlignment" />
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/pref_textChunkDialog"
+            android:entries="@array/pref_textChunk"
+            android:entryValues="@array/pref_textChunkValues"
+            android:key="pref_textChunk"
+            android:summary="Change how many words appear at a time."
+            android:title="@string/pref_textChunk" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="variable_wpm_checkbox"
+            android:summary="@string/variable_wpm_summary"
+            android:title="@string/variable_wpm" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

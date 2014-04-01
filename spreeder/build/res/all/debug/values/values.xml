@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string-array name="pref_fontSelection">
+        <item name="Large">Large</item>
+        <item name="Medium">Medium</item>
+        <item name="Small">Small</item>
+    </string-array>
+    <string-array name="pref_fontSelectionValues">
+        <item name="Large">3</item>
+        <item name="Medium">2</item>
+        <item name="Small">1</item>
+    </string-array>
+    <string-array name="pref_textAlignment">
+        <item name="Center">Center</item>
+        <item name="Left">Left</item>
+        <item name="Right">Right</item>
+    </string-array>
+    <string-array name="pref_textAlignmentValues">
+        <item name="Center">3</item>
+        <item name="Left">2</item>
+        <item name="Right">1</item>
+    </string-array>
+    <string-array name="pref_textChunk">
+        <item name="3">Three</item>
+        <item name="2">Two</item>
+        <item name="1">One</item>
+    </string-array>
+    <string-array name="pref_textChunkValues">
+        <item name="3">3</item>
+        <item name="2">2</item>
+        <item name="1">1</item>
+    </string-array>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="black">#4C4C4C</color>
+    <color name="blue">#56B8D8</color>
+    <color name="golden">#f2a400</color>
+    <color name="green">#4ac925</color>
+    <color name="grey">#D0D0D0</color>
+    <color name="holoblue">#ff33b6ea</color>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/build/exploded-aar/Spree/comandrewgiangtextspritzer/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <color name="pivot_text">#fff7000e</color>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="red">#e00707</color>
+    <color name="skyblue">#00d5f2</color>
+    <color name="white">#F0F0F0</color>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/build/exploded-aar/Spree/comandrewgiangtextspritzer/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="SpritzerTextView">
+        <attr name="clickControls" format="boolean" />
+    </declare-styleable>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="about_how_to">This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub file. </string>
+    <string name="action_settings">Settings</string>
+    <string name="addFile">Add EPUB</string>
+    <string name="addText">Add Text</string>
+    <string name="addToSpree">Add to Spree</string>
+    <string name="app_name">Spree</string>
+    <string name="author">Developed by Doron Zehavi, All Rights Reserved, 2014</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="backgroundColor">Dark Background</string>
+    <string name="backgroundDark">Change to dark background.</string>
+    <string name="backgroundLight">Change to light background.</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="changeChapter">Change Chapter</string>
+    <string name="clearText">Clear Text</string>
+    <string name="color_stripe">Color Stripe</string>
+    <string name="desc">Description</string>
+    <string name="done">Done</string>
+    <string name="enableSpritzText">Red Letter Alignment</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="header_appearance">Appearance</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="hello_world">Hello world!</string>
+    <string name="overflow">Menu Overflow</string>
+    <string name="pasteHint">Type or paste your text here.</string>
+    <string name="pasteText">Paste Text</string>
+    <string name="pause">Pause</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="pref_fontSize">Font Size</string>
+    <string name="pref_fontSizeDialog">Select Font Size</string>
+    <string name="pref_textAlignment">Text Alignment</string>
+    <string name="pref_textAlignmentDialog">Set text alignment.</string>
+    <string name="pref_textChunk">Word Chunks</string>
+    <string name="pref_textChunkDialog">Choose Chunk Size</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="ready">Ready!</string>
+    <string name="reset">Reset</string>
+    <string name="resetText">Reset Text</string>
+    <string name="rewind">Rewind</string>
+    <string name="s_logo">S Logo</string>
+    <string name="sourcesText">Reading Material</string>
+    <string name="start">Read!</string>
+    <string name="timeLeft">Time Left</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="time_left">Show Time Left</string>
+    <string name="time_left_summary">Show how much time until you are finished reading.</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="title">Title</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_paste">Add Your Text</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="title_activity_settings">Settings</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="title_activity_sources">SourcesActivity</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment />
+
+    <string name="variable_wpm">Variable WPM</string>
+    <string name="variable_wpm_summary">Longer words will appear on the screen for a longer time.</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="welcome">Welcome to Spree! Add some text to being speed reading!</string>
+    <string name="wordCount">wordCount</string>
+    <string name="wpm">250 WPM</string>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Dark" parent="AppBaseTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTitleSize">0dp</item>
+        <item name="android:background">#FFFFFFFF</item>
+        <item name="android:textColor">#00000000</item>
+    </style>
+    <!-- From: file:/C:/Android%20Apps/Spree/spreeder/build/exploded-aar/Spree/comandrewgiangtextspritzer/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="PivotLetter">
+        <item name="android:textColor">@color/pivot_text</item>
+    </style>
+
+</resources>

@@ -1,0 +1,29 @@
+<!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="26" android:versionName="1.49" package="com.doronzehavi.spree">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.doronzehavi.spree.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/addToSpree" android:name="com.doronzehavi.spree.PasteActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_about" android:name="com.doronzehavi.spree.About">
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="com.doronzehavi.spree.SettingsActivity" android:theme="@android:style/Theme.DeviceDefault.Dialog">
+        </activity>
+    </application>
+
+</manifest>
