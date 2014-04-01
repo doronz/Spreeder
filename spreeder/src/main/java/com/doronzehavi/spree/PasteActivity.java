@@ -1,26 +1,6 @@
 package com.doronzehavi.spree;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StreamCorruptedException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import nl.siegmann.epublib.Constants;
-import nl.siegmann.epublib.domain.Book;
-import nl.siegmann.epublib.domain.SpineReference;
-import nl.siegmann.epublib.domain.TOCReference;
-import nl.siegmann.epublib.domain.TableOfContents;
-import nl.siegmann.epublib.epub.EpubReader;
-import nl.siegmann.epublib.epub.EpubWriter;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -53,6 +33,26 @@ import com.gravity.goose.Article;
 import com.gravity.goose.Configuration;
 import com.gravity.goose.Goose;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StreamCorruptedException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import nl.siegmann.epublib.Constants;
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.TOCReference;
+import nl.siegmann.epublib.epub.EpubReader;
+import nl.siegmann.epublib.epub.EpubWriter;
+
 
 public class PasteActivity extends Activity {
 	public static LongOperation LongOperationTask;
@@ -65,12 +65,10 @@ public class PasteActivity extends Activity {
 	private static final int FILE_SELECT_CODE = 0;
 	
 	public static final String PREF_FIRST_EBOOK = "first_ebook_pref";
-	
-	static final int REQUEST_CODE = 3;
-	private EditText mPasteField;
+
+    private EditText mPasteField;
 	private Button mDoneButton;
-	static Dialog chapterPicker;
-	private static Book book;
+    private static Book book;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -440,7 +438,8 @@ public class PasteActivity extends Activity {
 	 *            The Uri to query.
 	 * @author paulburke
 	 */
-	public static String getPath(final Context context, final Uri uri) {
+	@SuppressLint("NewApi")
+    public static String getPath(final Context context, final Uri uri) {
 
 		final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
