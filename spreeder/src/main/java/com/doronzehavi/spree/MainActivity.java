@@ -102,7 +102,6 @@ public class MainActivity extends Activity implements
     private boolean mActivityResulted = false;
     private boolean mSpritzing = false;
     private boolean mAllowSpritzing = false;
-
     private boolean mPlayPressed = false;
 
     protected ProgressBar mProgressBar;
@@ -151,11 +150,11 @@ public class MainActivity extends Activity implements
             updateTimeLeftView();
             if (words.size() >= 0) {
 
-                if (words.get(0).getData().equals("")) {
+/*                if (words.get(0).getData().equals("")) {
                     mWordCount.setText("No words entered.");
                 } else {
                     mWordCount.setText(words.size() + " words");
-                }
+                }*/
 
                 if (i >= words.size()) {
                     mReadView.setText(words.get(words.size() - 1).getData());
@@ -507,7 +506,7 @@ public class MainActivity extends Activity implements
     }
 
     void updateWords() {
-        initSentences(toRead, sentences);
+        initSentences(toRead);
         initWords(toRead);
     }
 
@@ -520,7 +519,7 @@ public class MainActivity extends Activity implements
     }
 
     void updateWordCountView() {
-        if (words.get(0).getData() == "") {
+        if (words.get(0).getData().equals("") && words.size() <= 1) {
             reset();
             mWordCount.setText("No words entered.");
         } else {
@@ -629,14 +628,14 @@ public class MainActivity extends Activity implements
     private long convertWPM(int WPM) {
         double temp = ((double) WPM / (double) 60);
         temp = Math.pow(temp, -1) * 1000;
-        long result = Math.round(temp);
-        return result;
+        return Math.round(temp);
     }
 
     // Calculates rough percentage progress by word# / total words
     private int calculateProgress(ArrayList<Word> word2, int index) {
         double length = word2.size();
-        double i = index;
+        double i;
+        i = index;
         if (i == words.size() - 1) {
             return 100;
         }
@@ -689,7 +688,7 @@ public class MainActivity extends Activity implements
 
     // Manages the font size preference and changes the readView font size
     private void setFontSize() {
-        int mFontSize = 1;
+        int mFontSize;
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -708,7 +707,7 @@ public class MainActivity extends Activity implements
     }
 
     private void setTextAlignment() {
-        int mTextAlignment = 3;
+        int mTextAlignment;
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -728,7 +727,7 @@ public class MainActivity extends Activity implements
     }
 
     private int getChunkSize() {
-        int mChunkSize = 1;
+        int mChunkSize;
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -736,7 +735,7 @@ public class MainActivity extends Activity implements
         return mChunkSize;
     }
 
-    public void initSentences(String input, ArrayList<Sentence> Sentences) {
+    public void initSentences(String input) {
         sentences.clear();
         BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
         String source = input.replaceAll("\\s+", "");
