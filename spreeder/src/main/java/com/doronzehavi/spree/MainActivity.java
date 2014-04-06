@@ -142,6 +142,7 @@ public class MainActivity extends Activity implements
         if (savedInstanceState != null) {
             mIsPlaying = savedInstanceState.getBoolean(KEY_IS_PLAYING);
             i = savedInstanceState.getInt(KEY_INDEX);
+            Log.e(TAG, "Retrieving i = " + i);
             if (i != 0)
                 i -= 1;
             toRead = savedInstanceState.getString(KEY_TO_READ);
@@ -149,9 +150,11 @@ public class MainActivity extends Activity implements
             mIsDone = savedInstanceState.getBoolean(KEY_IS_DONE);
             updateTimeLeftView();
             if (words.size() >= 0) {
-                if (i >= words.size())  mReadView.setText(words.get(words.size() - 1).getData());
-                else if (i > 0)         mReadView.setText(words.get(i - 1).getData());
-
+                if (i >= words.size()) {
+                    mReadView.setText(words.get(words.size() - 1).getData());
+                } else if (i > 0) {
+                    mReadView.setText(words.get(i - 1).getData());
+                }
                 if (i == 0) {
                     mReadView.setText(words.get(0).getData());
                 }
@@ -160,7 +163,7 @@ public class MainActivity extends Activity implements
                 }
             }
         }
-        Log.e(TAG,  "onCreate, i = " + i);
+
     }
 
     @Override
@@ -183,12 +186,11 @@ public class MainActivity extends Activity implements
     protected void onStart() {
         super.onStart();
         Log.i(TAG, "onStart");
+
         if (getIntent() != null && !getIntent().getAction().equals(Intent.ACTION_DEFAULT)) {
             if (!mActivityResulted) {
                 try {
-                    Log.e(TAG, "before read i = " + i);
                     toRead = readFromFile();
-                    Log.e(TAG, "after read i = " + i);
                     spritzerTV.setSpritzText(toRead);
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
@@ -210,23 +212,15 @@ public class MainActivity extends Activity implements
         updateTimeLeftView();
         updateReadView();
         updateWordCountView();
-        Log.e(TAG,  "end onStart, i = " + i);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "onPause");
-        Log.e(TAG, "onPause i = " + i);
         pause();
-        saveWPM();
-        Log.e(TAG,  "onPause, i = " + i);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
         writeToFile();
+        saveWPM();
     }
 
     @Override
@@ -234,6 +228,7 @@ public class MainActivity extends Activity implements
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putBoolean(KEY_IS_PLAYING, mIsPlaying);
         savedInstanceState.putInt(KEY_INDEX, i);
+        Log.e(TAG, "Saving i = " + i);
         savedInstanceState.putString(KEY_TO_READ, toRead);
         savedInstanceState.putString(KEY_WORD_COUNT, words.size() + " words");
         savedInstanceState.putBoolean(KEY_PLAY_PRESSED, mPlayPressed);
@@ -300,7 +295,6 @@ public class MainActivity extends Activity implements
         }
         String[] parts = ret.split("\\|;");
         i = Integer.valueOf(parts[0]);
-        if (i < 0) i = 0;
         Log.i(TAG, "i = " + i);
         if (parts.length > 1) // toRead isn't empty
             ret = parts[1];
@@ -322,7 +316,6 @@ public class MainActivity extends Activity implements
 
     // Checks if user selected time left
     private boolean getTimeLeft() {
-
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
         return sharedPreferences.getBoolean(
@@ -433,6 +426,7 @@ public class MainActivity extends Activity implements
                 } else {
                     spritzerTV.pause();
                     pause();
+                    if (i != 0) i--;
                 }
             }
         });
@@ -551,6 +545,7 @@ public class MainActivity extends Activity implements
 
     // Pauses spreeding, unlock orientation, doesn't keep screen on
     private void pause() {
+        Log.e(TAG, "pause()");
         if (spritzerTV != null)
             spritzerTV.pause();
         mIsPlaying = false;
@@ -573,7 +568,7 @@ public class MainActivity extends Activity implements
         mWordCount.setVisibility(View.VISIBLE);
         Log.e(TAG, "RESET");
     }
-
+    // TODO NOT THIS
     private void updateReadView() {
         Log.i(TAG, "i: " + i);
         if (i > words.size())
@@ -598,7 +593,6 @@ public class MainActivity extends Activity implements
                 mProgressBar.setProgress(calculateProgress(words, i));
                 updateTimeLeftView();
             }
-
         } else {
             if (wordsLeft >= 3) {
                 mReadView.setText(words.get(i).getData() + " "
@@ -619,7 +613,6 @@ public class MainActivity extends Activity implements
                 updateTimeLeftView();
             }
         }
-
     }
 
     // Converts Words per minute to milliseconds (for handler delay)
@@ -632,11 +625,9 @@ public class MainActivity extends Activity implements
     // Calculates rough percentage progress by word# / total words
     private int calculateProgress(ArrayList<Word> word2, int index) {
         double length = word2.size();
-        if (index == words.size() - 1) {
+        if (index == words.size() - 1)
             return 100;
-        }
-        double prog = (index / length) * 100;
-        return (int) Math.round(prog);
+        return (int) Math.round((index / length) * 100);
     }
 
     @Override
