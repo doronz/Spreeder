@@ -199,7 +199,7 @@ public class MainActivity extends Activity implements
             mActivityResulted = false;
         } else {
             String temp = getIntent().getStringExtra("paste");
-            if (temp != null) {
+            if (temp != null && toRead != temp) {
                 toRead = temp;
                 spritzerTV.setSpritzText(toRead);
                 i = 0;
