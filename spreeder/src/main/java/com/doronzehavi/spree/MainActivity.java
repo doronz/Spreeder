@@ -149,18 +149,8 @@ public class MainActivity extends Activity implements
             mIsDone = savedInstanceState.getBoolean(KEY_IS_DONE);
             updateTimeLeftView();
             if (words.size() >= 0) {
-
-/*                if (words.get(0).getData().equals("")) {
-                    mWordCount.setText("No words entered.");
-                } else {
-                    mWordCount.setText(words.size() + " words");
-                }*/
-
-                if (i >= words.size()) {
-                    mReadView.setText(words.get(words.size() - 1).getData());
-                } else if (i > 0) {
-                    mReadView.setText(words.get(i - 1).getData());
-                }
+                if (i >= words.size())  mReadView.setText(words.get(words.size() - 1).getData());
+                else if (i > 0)         mReadView.setText(words.get(i - 1).getData());
 
                 if (i == 0) {
                     mReadView.setText(words.get(0).getData());
@@ -170,7 +160,7 @@ public class MainActivity extends Activity implements
                 }
             }
         }
-
+        Log.e(TAG,  "onCreate, i = " + i);
     }
 
     @Override
@@ -193,12 +183,12 @@ public class MainActivity extends Activity implements
     protected void onStart() {
         super.onStart();
         Log.i(TAG, "onStart");
-
-        //noinspection ConstantConditions
         if (getIntent() != null && !getIntent().getAction().equals(Intent.ACTION_DEFAULT)) {
             if (!mActivityResulted) {
                 try {
+                    Log.e(TAG, "before read i = " + i);
                     toRead = readFromFile();
+                    Log.e(TAG, "after read i = " + i);
                     spritzerTV.setSpritzText(toRead);
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
@@ -220,15 +210,23 @@ public class MainActivity extends Activity implements
         updateTimeLeftView();
         updateReadView();
         updateWordCountView();
+        Log.e(TAG,  "end onStart, i = " + i);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "onPause");
+        Log.e(TAG, "onPause i = " + i);
         pause();
-        writeToFile();
         saveWPM();
+        Log.e(TAG,  "onPause, i = " + i);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        writeToFile();
     }
 
     @Override
@@ -302,6 +300,7 @@ public class MainActivity extends Activity implements
         }
         String[] parts = ret.split("\\|;");
         i = Integer.valueOf(parts[0]);
+        if (i < 0) i = 0;
         Log.i(TAG, "i = " + i);
         if (parts.length > 1) // toRead isn't empty
             ret = parts[1];
@@ -315,7 +314,6 @@ public class MainActivity extends Activity implements
 
     // Checks if user selected variable wpm
     private boolean getVariableWPM() {
-
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
         return sharedPreferences.getBoolean(
@@ -634,12 +632,10 @@ public class MainActivity extends Activity implements
     // Calculates rough percentage progress by word# / total words
     private int calculateProgress(ArrayList<Word> word2, int index) {
         double length = word2.size();
-        double i;
-        i = index;
-        if (i == words.size() - 1) {
+        if (index == words.size() - 1) {
             return 100;
         }
-        double prog = (i / length) * 100;
+        double prog = (index / length) * 100;
         return (int) Math.round(prog);
     }
 
@@ -839,8 +835,8 @@ public class MainActivity extends Activity implements
                         updateReadView();
                     }
                 }
-                i++;
-                if (i <= words.size()) {
+                if (i < words.size()) {
+                    i++;
                     if (i > 0 && words.get(i - 1).getData().endsWith(".")
                             && getChunkSize() == 1)
                         mHandler.postDelayed(this,
