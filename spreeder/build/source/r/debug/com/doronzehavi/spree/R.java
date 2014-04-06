@@ -64,28 +64,30 @@ containing a value of this type.
     }
     public static final class id {
         public static final int S_logo=0x7f0c0003;
-        public static final int about=0x7f0c0019;
-        public static final int action_settings=0x7f0c0014;
-        public static final int addFile=0x7f0c001c;
-        public static final int addText=0x7f0c0015;
+        public static final int about=0x7f0c001b;
+        public static final int action_settings=0x7f0c0016;
+        public static final int addFile=0x7f0c001e;
+        public static final int addText=0x7f0c0017;
         public static final int app_name_text=0x7f0c0000;
         public static final int background=0x7f0c0004;
         public static final int cardsview=0x7f0c0012;
-        public static final int changeChapter=0x7f0c001d;
-        public static final int clearText=0x7f0c001a;
+        public static final int changeChapter=0x7f0c001f;
+        public static final int clearText=0x7f0c001c;
         public static final int doneButton=0x7f0c0011;
-        public static final int enableSpritzing=0x7f0c0017;
+        public static final int enableSpritzing=0x7f0c0019;
         public static final int how_to_text=0x7f0c0001;
         public static final int numberPicker1=0x7f0c0013;
         public static final int pasteField=0x7f0c0010;
-        public static final int pasteText=0x7f0c001b;
+        public static final int pasteText=0x7f0c001d;
         public static final int play_button=0x7f0c0005;
         public static final int progressbar=0x7f0c0008;
         public static final int readView=0x7f0c000a;
-        public static final int resetText=0x7f0c0016;
+        public static final int resetText=0x7f0c0018;
         public static final int rewind_button=0x7f0c000c;
         public static final int seekBar=0x7f0c0007;
-        public static final int settings=0x7f0c0018;
+        public static final int seekWord=0x7f0c0014;
+        public static final int seekWordBar=0x7f0c0015;
+        public static final int settings=0x7f0c001a;
         public static final int sound_button=0x7f0c000f;
         public static final int spritzProgressbar=0x7f0c0009;
         public static final int spritzView=0x7f0c000b;
@@ -100,7 +102,8 @@ containing a value of this type.
         public static final int activity_paste=0x7f030002;
         public static final int activity_sources=0x7f030003;
         public static final int chapter_picker_dialog=0x7f030004;
-        public static final int splash_view=0x7f030005;
+        public static final int seek_reading_dialog=0x7f030005;
+        public static final int splash_view=0x7f030006;
     }
     public static final class menu {
         public static final int about=0x7f0b0000;
@@ -137,26 +140,28 @@ containing a value of this type.
         public static final int pref_textAlignmentDialog=0x7f090019;
         public static final int pref_textChunk=0x7f09001a;
         public static final int pref_textChunkDialog=0x7f09001b;
-        public static final int ready=0x7f09001c;
-        public static final int reset=0x7f09001d;
-        public static final int resetText=0x7f09001e;
-        public static final int rewind=0x7f09001f;
-        public static final int s_logo=0x7f090020;
-        public static final int sourcesText=0x7f090021;
-        public static final int start=0x7f090022;
-        public static final int timeLeft=0x7f090023;
-        public static final int time_left=0x7f090024;
-        public static final int time_left_summary=0x7f090025;
-        public static final int title=0x7f090026;
-        public static final int title_activity_about=0x7f090027;
-        public static final int title_activity_paste=0x7f090028;
-        public static final int title_activity_settings=0x7f090029;
-        public static final int title_activity_sources=0x7f09002a;
-        public static final int variable_wpm=0x7f09002b;
-        public static final int variable_wpm_summary=0x7f09002c;
-        public static final int welcome=0x7f09002d;
-        public static final int wordCount=0x7f09002e;
-        public static final int wpm=0x7f09002f;
+        public static final int punctuation_pause=0x7f09001c;
+        public static final int punctuation_pause_summary=0x7f09001d;
+        public static final int ready=0x7f09001e;
+        public static final int reset=0x7f09001f;
+        public static final int resetText=0x7f090020;
+        public static final int rewind=0x7f090021;
+        public static final int s_logo=0x7f090022;
+        public static final int sourcesText=0x7f090023;
+        public static final int start=0x7f090024;
+        public static final int timeLeft=0x7f090025;
+        public static final int time_left=0x7f090026;
+        public static final int time_left_summary=0x7f090027;
+        public static final int title=0x7f090028;
+        public static final int title_activity_about=0x7f090029;
+        public static final int title_activity_paste=0x7f09002a;
+        public static final int title_activity_settings=0x7f09002b;
+        public static final int title_activity_sources=0x7f09002c;
+        public static final int variable_wpm=0x7f09002d;
+        public static final int variable_wpm_summary=0x7f09002e;
+        public static final int welcome=0x7f09002f;
+        public static final int wordCount=0x7f090030;
+        public static final int wpm=0x7f090031;
     }
     public static final class style {
         /** 

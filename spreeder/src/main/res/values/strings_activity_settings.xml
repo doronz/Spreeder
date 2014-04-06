@@ -55,7 +55,8 @@
     <string name="pref_textChunkDialog">Choose Chunk Size</string>
     <string name="pref_textChunk">Word Chunks</string>
     
-    
+    <string name="punctuation_pause_summary">Add a short pause on commas and periods.</string>
+    <string name="punctuation_pause">Punctuation Pause</string>
     <string name="variable_wpm_summary">Longer words will appear on the screen for a longer time.</string>
     <string name="variable_wpm">Variable WPM</string>
     <string name="time_left_summary">Show how much time until you are finished reading.</string>

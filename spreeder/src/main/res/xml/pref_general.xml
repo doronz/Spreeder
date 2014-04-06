@@ -43,6 +43,12 @@
 
         <CheckBoxPreference
             android:defaultValue="false"
+            android:key="punctuation_pause_checkbox"
+            android:summary="@string/punctuation_pause_summary"
+            android:title="@string/punctuation_pause" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
             android:key="variable_wpm_checkbox"
             android:summary="@string/variable_wpm_summary"
             android:title="@string/variable_wpm" />

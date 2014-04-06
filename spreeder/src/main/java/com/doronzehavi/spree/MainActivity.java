@@ -18,6 +18,8 @@ import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,7 +65,8 @@ public class MainActivity extends Activity implements
     public static final String TAG = "SPREE";
     private static final int DEFAULT_WPM = 250;
     private static final int LONG_WORD = 7;
-
+    private static final double PAUSE_PERIOD = 2.0;
+    private static final double PAUSE_COMMA = 1.5;
     // Font Size
     public int LARGE = 52;
     public int MEDIUM = 40;
@@ -134,6 +137,7 @@ public class MainActivity extends Activity implements
             updateWords();
         }
         initPlayButton();
+        initSeekWords();
         initSeekBar();
         initRewindButton();
         mWordCount.setText(words.size() + " words");
@@ -142,7 +146,6 @@ public class MainActivity extends Activity implements
         if (savedInstanceState != null) {
             mIsPlaying = savedInstanceState.getBoolean(KEY_IS_PLAYING);
             i = savedInstanceState.getInt(KEY_INDEX);
-            Log.e(TAG, "Retrieving i = " + i);
             if (i != 0)
                 i -= 1;
             toRead = savedInstanceState.getString(KEY_TO_READ);
@@ -197,7 +200,7 @@ public class MainActivity extends Activity implements
                 }
             }
             mActivityResulted = false;
-        } else { 
+        } else {
             String temp = getIntent().getStringExtra("paste");
             if (temp != null && toRead != temp) {
                 toRead = temp;
@@ -228,7 +231,6 @@ public class MainActivity extends Activity implements
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putBoolean(KEY_IS_PLAYING, mIsPlaying);
         savedInstanceState.putInt(KEY_INDEX, i);
-        Log.e(TAG, "Saving i = " + i);
         savedInstanceState.putString(KEY_TO_READ, toRead);
         savedInstanceState.putString(KEY_WORD_COUNT, words.size() + " words");
         savedInstanceState.putBoolean(KEY_PLAY_PRESSED, mPlayPressed);
@@ -295,7 +297,6 @@ public class MainActivity extends Activity implements
         }
         String[] parts = ret.split("\\|;");
         i = Integer.valueOf(parts[0]);
-        Log.i(TAG, "i = " + i);
         if (parts.length > 1) // toRead isn't empty
             ret = parts[1];
         else
@@ -304,7 +305,27 @@ public class MainActivity extends Activity implements
         return ret;
     }
 
-    // Text shared to app
+
+    private double getPeriodPause() {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        if(sharedPreferences.getBoolean(
+                "punctuation_pause_checkbox", false))
+            return PAUSE_PERIOD;
+        else
+            return 1;
+    }
+
+    private double getCommaPause() {
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        if(sharedPreferences.getBoolean(
+                "punctuation_pause_checkbox", false))
+            return PAUSE_COMMA;
+        else
+            return 1;
+    }
+
 
     // Checks if user selected variable wpm
     private boolean getVariableWPM() {
@@ -407,6 +428,68 @@ public class MainActivity extends Activity implements
             }
         });
     }
+
+    private void initSeekWords() {
+        // Click on word to seek through reading
+        final int[] changeWord = {0};
+        mReadView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                pause();
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case DialogInterface.BUTTON_POSITIVE:
+                                // Yes button clicked
+                                i = changeWord[0];
+                                updateReadView();
+
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                // No button clicked
+
+                                // Do nothing...
+
+                                break;
+                        }
+                    }
+                };
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View layout = inflater.inflate(R.layout.seek_reading_dialog, (ViewGroup) findViewById(R.layout.activity_main));
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setView(layout);
+                builder.setPositiveButton("Done", dialogClickListener)
+                        .setNegativeButton("Cancel", dialogClickListener)
+                        .show();
+                final TextView seekWord = (TextView) layout.findViewById(R.id.seekWord);
+                seekWord.setText(words.get(i).getData());
+                SeekBar seekWordBar = (SeekBar) layout.findViewById(R.id.seekWordBar);
+                seekWordBar.setMax(words.size() - 1);
+                seekWordBar.setProgress(i);
+                seekWordBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        seekWord.setText(words.get(progress).getData());
+                        changeWord[0] = progress;
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
+            }
+        });
+    }
+
 
     private void initPlayButton() {
         // HANDLES PLAY AND DELAY, CALLS run()
@@ -545,7 +628,6 @@ public class MainActivity extends Activity implements
 
     // Pauses spreeding, unlock orientation, doesn't keep screen on
     private void pause() {
-        Log.e(TAG, "pause()");
         if (spritzerTV != null)
             spritzerTV.pause();
         mIsPlaying = false;
@@ -568,6 +650,7 @@ public class MainActivity extends Activity implements
         mWordCount.setVisibility(View.VISIBLE);
         Log.e(TAG, "RESET");
     }
+
     // TODO NOT THIS
     private void updateReadView() {
         Log.i(TAG, "i: " + i);
@@ -831,11 +914,11 @@ public class MainActivity extends Activity implements
                     if (i > 0 && words.get(i - 1).getData().endsWith(".")
                             && getChunkSize() == 1)
                         mHandler.postDelayed(this,
-                                Math.round(convertWPM(mWPM) * 2));
+                                Math.round(convertWPM(mWPM) * getPeriodPause()));
                     else if (i > 0 && words.get(i - 1).getData().contains(",")
                             && getChunkSize() == 1)
                         mHandler.postDelayed(this,
-                                (int) Math.round(convertWPM(mWPM) * 1.5));
+                                (int) Math.round(convertWPM(mWPM) * getCommaPause()));
                     else if (getVariableWPM()) {
                         mHandler.postDelayed(this, convertVariableWPM(mWPM)
                                 * getChunkSize());
@@ -957,7 +1040,6 @@ public class MainActivity extends Activity implements
     }
 
     void spritzingManager() {
-        Log.e(TAG, mSpritzing + " " + mAllowSpritzing);
         if (mAllowSpritzing) {
             enableSpritzing();
         } else {
