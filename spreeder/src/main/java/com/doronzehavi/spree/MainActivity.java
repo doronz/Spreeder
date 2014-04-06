@@ -197,7 +197,7 @@ public class MainActivity extends Activity implements
                 }
             }
             mActivityResulted = false;
-        } else {
+        } else { 
             String temp = getIntent().getStringExtra("paste");
             if (temp != null && toRead != temp) {
                 toRead = temp;
