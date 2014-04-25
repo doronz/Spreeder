@@ -1,5 +1,4 @@
 package com.doronzehavi.spree;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -35,7 +34,9 @@ import android.widget.Toast;
 
 import com.andrewgiang.textspritzer.lib.SpritzerTextView;
 
+
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,6 +46,9 @@ import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.epub.EpubReader;
 
 public class MainActivity extends Activity implements
         OnSharedPreferenceChangeListener {
@@ -252,8 +256,8 @@ public class MainActivity extends Activity implements
     void getSavedWPM() {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
-        mWPM = sharedPreferences.getInt(WPM_PREF, DEFAULT_WPM) / 10 - 1;
-        mSeekBar.setProgress(mWPM);
+        mWPM = sharedPreferences.getInt(WPM_PREF, DEFAULT_WPM);
+        mSeekBar.setProgress(mWPM / 10 - 1);
         spritzerTV.setWpm(mWPM);
     }
 
@@ -303,6 +307,14 @@ public class MainActivity extends Activity implements
             ret = "";
 
         return ret;
+    }
+
+    private Book readBook() throws IOException {
+        MyBook resultBook;
+        EpubReader reader = new EpubReader();
+        FileInputStream file = new FileInputStream("book.dat");
+        resultBook = (MyBook) reader.readEpub(file);
+        return resultBook;
     }
 
 
@@ -461,6 +473,7 @@ public class MainActivity extends Activity implements
                 View layout = inflater.inflate(R.layout.seek_reading_dialog, (ViewGroup) findViewById(R.layout.activity_main));
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setView(layout);
+                builder.setTitle("Seek");
                 builder.setPositiveButton("Done", dialogClickListener)
                         .setNegativeButton("Cancel", dialogClickListener)
                         .show();
@@ -489,6 +502,8 @@ public class MainActivity extends Activity implements
             }
         });
     }
+
+
 
 
     private void initPlayButton() {

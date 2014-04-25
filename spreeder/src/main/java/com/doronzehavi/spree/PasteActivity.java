@@ -246,10 +246,9 @@ public class PasteActivity extends Activity {
                     Log.d(TAG, "File Uri: " + uri.toString());
                     // Get the path
                     String path = getPath(this, uri);
-                    if (path.contains(".pdf")) {
-                        // get pdf
-                    } else
+                    if (path.contains(".epub")) {
                         book = getBook(data);
+                    }
                     if (book == null)
                         Toast.makeText(this, "Error: Try a different file.",
                                 Toast.LENGTH_LONG).show();
@@ -322,7 +321,7 @@ public class PasteActivity extends Activity {
         String[] chapterTitles = new String[TOC.size()];
         for (int i = 0; i < TOC.size(); i++) {
             chapterTitles[i] = TOC.get(i).getTitle();
-            Log.e(TAG, "Chapter: " + chapterTitles[i]);
+            Log.i(TAG, "Chapter: " + chapterTitles[i]);
         }
 
         alert.setTitle("Select a chapter");
@@ -671,7 +670,7 @@ public class PasteActivity extends Activity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Add an eBook?");
             builder.setMessage(
-                    "This is an experimental feature and may cause unexpected behavior. Currently requires book has chapters, and proper encoding.")
+                    "This is an experimental feature and may cause unexpected behavior. Currently requires that the book has chapters, and proper encoding.")
                     .setPositiveButton("Got It", dialogClickListener)
                     .setNegativeButton("Nevermind", dialogClickListener).show();
         } else

@@ -14,7 +14,8 @@
         android:layout_gravity="center"
         android:textSize="30sp"
         android:textColor="@color/black"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:lines="1"/>
 
     <SeekBar
         android:id="@+id/seekWordBar"
