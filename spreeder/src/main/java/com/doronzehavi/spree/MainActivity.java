@@ -1,4 +1,5 @@
 package com.doronzehavi.spree;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -64,6 +65,7 @@ public class MainActivity extends Activity implements
     public static final String KEY_IS_DONE = "key_is_done";
     public static final String WPM_PREF = "wpm_pref";
     public static final String PREF_FIRST_RUN = "first_run_pref";
+    public static final String PREF_FIRST_REWIND = "first_rewind_pref";
 
     // Constants
     public static final String TAG = "SPREE";
@@ -321,7 +323,7 @@ public class MainActivity extends Activity implements
     private double getPeriodPause() {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
-        if(sharedPreferences.getBoolean(
+        if (sharedPreferences.getBoolean(
                 "punctuation_pause_checkbox", false))
             return PAUSE_PERIOD;
         else
@@ -331,7 +333,7 @@ public class MainActivity extends Activity implements
     private double getCommaPause() {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
-        if(sharedPreferences.getBoolean(
+        if (sharedPreferences.getBoolean(
                 "punctuation_pause_checkbox", false))
             return PAUSE_COMMA;
         else
@@ -504,8 +506,6 @@ public class MainActivity extends Activity implements
     }
 
 
-
-
     private void initPlayButton() {
         // HANDLES PLAY AND DELAY, CALLS run()
         mPlayButton.setOnClickListener(new View.OnClickListener() {
@@ -557,8 +557,50 @@ public class MainActivity extends Activity implements
         });
     }
 
+    //
+//    // First run dialog
+//    void firstRunDialog() {
+//        boolean firstrun = getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
+//                .getBoolean("firstrun", true);
+//        if (firstrun) {
+//            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    switch (which) {
+//                        case DialogInterface.BUTTON_POSITIVE:
+//                            // Yes button clicked
+//                            getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
+//                                    .edit().putBoolean("firstrun", false).commit();
+//                            break;
+//
+//                        case DialogInterface.BUTTON_NEGATIVE:
+//                            // No button clicked
+//                            getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
+//                                    .edit().putBoolean("firstrun", true).commit();
+//                            break;
+//                    }
+//                }
+//            };
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Welcome to Spree");
+//            builder.setMessage(
+//                    "Thanks for downloading Spree! You can add material by hitting the '+' button and then either pasting in material or going to the menu and adding a .epub file. You can also add material by sharing articles from other apps or even your browser via \"Add to Spree\". If you enjoy this app please review it, thanks!")
+//                    .setPositiveButton("Got It", dialogClickListener)
+//                    .setNegativeButton("Show Next Time", dialogClickListener)
+//                    .show();
+//        }
+//    }
     // rewinds current sentence
     public void rewindSentence() {
+        //TODO
+        boolean firstRewind = getSharedPreferences(PREF_FIRST_REWIND, MODE_PRIVATE)
+                .getBoolean("firstrewind", true);
+        if (firstRewind){
+            Toast.makeText(this, "Tap once to rewind sentence, long press to rewind to previous sentence.", Toast.LENGTH_LONG)
+                    .show();
+            getSharedPreferences(PREF_FIRST_REWIND, MODE_PRIVATE)
+                                    .edit().putBoolean("firstrewind", false).commit();
+        }
         int newIndex = words.get(i).getSentenceIndex();
         if (newIndex == 0)
             reset();
@@ -579,6 +621,7 @@ public class MainActivity extends Activity implements
     // Starts spreeding, locks orientation, and keeps screen on
     @SuppressLint("InlinedApi")
     private void play() {
+        hideSystemUI();
         mPlayPressed = true;
         if (toRead.isEmpty()) {
             Toast.makeText(this, "Add text to begin", Toast.LENGTH_SHORT)
@@ -643,6 +686,7 @@ public class MainActivity extends Activity implements
 
     // Pauses spreeding, unlock orientation, doesn't keep screen on
     private void pause() {
+        showSystemUI();
         if (spritzerTV != null)
             spritzerTV.pause();
         mIsPlaying = false;
@@ -653,6 +697,7 @@ public class MainActivity extends Activity implements
 
     // Re-inits spreeder to first Word and stops
     private void reset() {
+        showSystemUI();
         i = 0;
         mProgressBar.setProgress(0);
         mPlayButton.setText(R.string.start);
@@ -1084,6 +1129,36 @@ public class MainActivity extends Activity implements
         spritzerTV.attachProgressBar(mSpritzProgressBar);
         mSpritzProgressBar
                 .setMax(spritzerTV.getSpritzer().getWordArray().length);
+
+    }
+
+    // This snippet hides the system bars.
+    private void hideSystemUI() {
+        // Set the IMMERSIVE flag.
+        // Set the content to appear under the system bars so that the content
+        // doesn't resize when the system bars hide and show.
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
+            mBackground.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE
+            );
+        }
+    }
+
+    // This snippet shows the system bars. It does this by removing all the flags
+// except for the ones that make the content appear under the system bars.
+    private void showSystemUI() {
+        if (android.os.Build.VERSION.SDK_INT >= 19) {
+            mBackground.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            );
+        }
 
     }
 

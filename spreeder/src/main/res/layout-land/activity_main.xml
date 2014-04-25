@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity" >
 
     <Button
@@ -15,10 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/start"
         android:textColor="@color/blue"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignRight="@+id/progressbar"
+        android:layout_alignEnd="@+id/progressbar"
+        android:layout_alignLeft="@+id/progressbar"
+        android:layout_alignStart="@+id/progressbar" />
 
     <TextView
         android:id="@+id/wpm"
@@ -54,6 +60,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/wpm"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:layout_marginBottom="45dp"
@@ -65,6 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/wpm"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:layout_marginBottom="45dp"
@@ -77,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/progressbar"
         android:layout_alignLeft="@+id/progressbar"
+        android:paddingLeft="10dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/rewind"
         android:src="@drawable/ic_action_rewind" />
@@ -98,6 +109,7 @@
         android:layout_alignBottom="@+id/rewind_button"
         android:layout_alignRight="@+id/progressbar"
         android:paddingBottom="5dp"
+        android:paddingRight="10dp"
         android:text="@string/timeLeft"
         android:textColor="@color/black"
         android:textSize="18sp" />
