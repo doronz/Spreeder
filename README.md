@@ -16,3 +16,7 @@ This is my first commercial Android App that has been released to the Google Pla
 * Left, right and center text alignment
 * Calculates how long it will take you to read at the current WPM setting
 * Free, ad-supported version available
+
+
+[Spree on Google Play](http://play.google.com/store/apps/details?id=com.doronzehavi.spree)
+[Spree Free on Google Play](https://play.google.com/store/apps/details?id=com.doronzehavi.spreefree)
