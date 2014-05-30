@@ -1,5 +1,6 @@
-<!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="26" android:versionName="1.49" package="com.doronzehavi.spree">
+<!-- From: file:/C:/Android%20Apps/Spree/spreeder/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="33" android:versionName="1.6.01" package="com.doronzehavi.spree">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
 

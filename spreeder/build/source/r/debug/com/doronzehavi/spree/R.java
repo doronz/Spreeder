@@ -64,36 +64,34 @@ containing a value of this type.
     }
     public static final class id {
         public static final int S_logo=0x7f0c0003;
-        public static final int about=0x7f0c001b;
-        public static final int action_settings=0x7f0c0016;
-        public static final int addFile=0x7f0c001e;
-        public static final int addText=0x7f0c0017;
+        public static final int about=0x7f0c0019;
+        public static final int action_settings=0x7f0c0015;
+        public static final int addFile=0x7f0c001c;
+        public static final int addText=0x7f0c0016;
         public static final int app_name_text=0x7f0c0000;
         public static final int background=0x7f0c0004;
-        public static final int cardsview=0x7f0c0012;
-        public static final int changeChapter=0x7f0c001f;
-        public static final int clearText=0x7f0c001c;
-        public static final int doneButton=0x7f0c0011;
-        public static final int enableSpritzing=0x7f0c0019;
+        public static final int cardsview=0x7f0c0011;
+        public static final int changeChapter=0x7f0c001d;
+        public static final int clearText=0x7f0c001a;
+        public static final int doneButton=0x7f0c0010;
         public static final int how_to_text=0x7f0c0001;
-        public static final int numberPicker1=0x7f0c0013;
-        public static final int pasteField=0x7f0c0010;
-        public static final int pasteText=0x7f0c001d;
+        public static final int numberPicker1=0x7f0c0012;
+        public static final int pasteField=0x7f0c000f;
+        public static final int pasteText=0x7f0c001b;
         public static final int play_button=0x7f0c0005;
         public static final int progressbar=0x7f0c0008;
         public static final int readView=0x7f0c000a;
-        public static final int resetText=0x7f0c0018;
-        public static final int rewind_button=0x7f0c000c;
+        public static final int resetText=0x7f0c0017;
+        public static final int rewind_button=0x7f0c000b;
         public static final int seekBar=0x7f0c0007;
-        public static final int seekWord=0x7f0c0014;
-        public static final int seekWordBar=0x7f0c0015;
-        public static final int settings=0x7f0c001a;
-        public static final int sound_button=0x7f0c000f;
+        public static final int seekWord=0x7f0c0013;
+        public static final int seekWordBar=0x7f0c0014;
+        public static final int settings=0x7f0c0018;
+        public static final int sound_button=0x7f0c000e;
         public static final int spritzProgressbar=0x7f0c0009;
-        public static final int spritzView=0x7f0c000b;
         public static final int textView1=0x7f0c0002;
-        public static final int timeLeft=0x7f0c000e;
-        public static final int wordCount=0x7f0c000d;
+        public static final int timeLeft=0x7f0c000d;
+        public static final int wordCount=0x7f0c000c;
         public static final int wpm=0x7f0c0006;
     }
     public static final class layout {

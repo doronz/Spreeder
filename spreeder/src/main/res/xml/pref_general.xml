@@ -2,7 +2,7 @@
 
     <PreferenceCategory android:title="Appearance" >
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="background_checkbox"
             android:summaryOff="@string/backgroundDark"
             android:summaryOn="@string/backgroundLight"

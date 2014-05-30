@@ -16,8 +16,8 @@
     <string name="addText">Add Text</string>
     <string name="title_activity_paste">Add Your Text</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_about">About</string>
-    <string name="about_how_to">This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub file. </string>
+    <string name="title_activity_about">Help</string>
+    <string name="about_how_to">This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub or .txt file. </string>
     <string name="author">Developed by Doron Zehavi, All Rights Reserved, 2014</string>
     <string name="welcome">Welcome to Spree! Add some text to being speed reading!</string>
     <string name="rewind">Rewind</string>
@@ -31,7 +31,7 @@
     <string name="title">Title</string>
     <string name="desc">Description</string>
     <string name="overflow">Menu Overflow</string>
-    <string name="addFile">Add EPUB</string>
+    <string name="addFile">Add File</string>
     <string name="changeChapter">Change Chapter</string>
     <string name="enableSpritzText">Red Letter Alignment</string>
 

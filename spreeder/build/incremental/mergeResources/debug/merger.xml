@@ -269,6 +269,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="seek_reading_dialog"
+                path="C:\Android Apps\Spree\spreeder\src\main\res\layout\seek_reading_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="splash_view"
                 path="C:\Android Apps\Spree\spreeder\src\main\res\layout\splash_view.xml"
                 qualifiers=""
@@ -349,7 +354,7 @@
                 </string>
                 <string name="start" >Read!
                 </string>
-                <string name="addFile" >Add EPUB
+                <string name="addFile" >Add File
                 </string>
                 <string name="welcome" >Welcome to Spree! Add some text to being speed reading!
                 </string>
@@ -361,7 +366,7 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="title_activity_about" >About
+                <string name="title_activity_about" >Help
                 </string>
                 <string name="enableSpritzText" >Red Letter Alignment
                 </string>
@@ -387,7 +392,7 @@
                 </string>
                 <string name="title" >Title
                 </string>
-                <string name="about_how_to" >This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub file. 
+                <string name="about_how_to" >This app was created to help you speed read more easily! To add content, either share from other apps, copy and paste, or add a supported .epub or .txt file. 
                 </string>
                 <string name="author" >Developed by Doron Zehavi, All Rights Reserved, 2014
                 </string>
@@ -471,6 +476,8 @@ Small
                 </string>
                 <string name="backgroundDark" >Change to dark background.
                 </string>
+                <string name="punctuation_pause_summary" >Add a short pause on commas and periods.
+                </string>
                 <string name="pref_fontSizeDialog" >Select Font Size
                 </string>
 
@@ -507,6 +514,8 @@ Three
                 </string>
                 <string name="variable_wpm_summary" >Longer words will appear on the screen for a longer time.
                 </string>
+                <string name="punctuation_pause" >Punctuation Pause
+                </string>
             </file>
             <file
                 path="C:\Android Apps\Spree\spreeder\src\main\res\values\styles.xml"
@@ -521,6 +530,7 @@ Three
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+
                 </style>
 
                 <style
@@ -545,6 +555,7 @@ false
                     parent="AppBaseTheme" >
 
                     <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
                 </style>
             </file>
             <file

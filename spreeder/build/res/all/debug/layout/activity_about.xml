@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="@string/author"
-        android:textAlignment="center" />
+         />
 
     <ImageButton
         android:id="@+id/S_logo"

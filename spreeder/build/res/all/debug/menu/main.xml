@@ -12,13 +12,7 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/resetText"/>
-    
-    <item android:id="@+id/enableSpritzing"
-        android:orderInCategory="101"
-        android:showAsAction="never"
-        android:title="@string/enableSpritzText"
-        android:checked="false" />
-        
+
     <item
         android:id="@+id/settings"
         android:orderInCategory="102"
