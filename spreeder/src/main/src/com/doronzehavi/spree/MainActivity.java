@@ -237,6 +237,12 @@ public class MainActivity extends Activity implements
 
 	// Helper methods
 
+	/*
+	 * void saveWPM() 
+	 * PRE: none 
+	 * POST: Saves the user's selected WPM that is
+	 * saved in mWPM.
+	 */
 	void saveWPM() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -247,6 +253,11 @@ public class MainActivity extends Activity implements
 		editor.commit();
 	}
 
+	/* void getSavedWPM() 
+	 * PRE: None 
+	 * POST: Updates the WPM seekbar with the saved
+	 * WPM if it exists, or the default value otherwise.
+	 */
 	void getSavedWPM() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -254,7 +265,11 @@ public class MainActivity extends Activity implements
 		mSeekBar.setProgress(mWPM / 10 - 1);
 	}
 
-	// Save reading material
+	/* void writeToFile()
+	 * PRE: None
+	 * POST: Saves the currently in progress reading and position for use on 
+	 * next run.
+	 */
 	private void writeToFile() {
 		try {
 			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
@@ -267,6 +282,12 @@ public class MainActivity extends Activity implements
 		}
 	}
 
+	/* String readFromFile() 
+	 * PRE: App has been run before and so "save.txt" exists.. exception caught 
+	 * if it doesn't.
+	 * POST: toRead is filled with the saved reading material from the previous
+	 * session, and 'i' is set to the last position of the reading.
+	 */
 	private String readFromFile() {
 		String ret = "";
 		try {
@@ -302,14 +323,12 @@ public class MainActivity extends Activity implements
 		return ret;
 	}
 
-	private Book readBook() throws IOException {
-		MyBook resultBook;
-		EpubReader reader = new EpubReader();
-		FileInputStream file = new FileInputStream("book.dat");
-		resultBook = (MyBook) reader.readEpub(file);
-		return resultBook;
-	}
-
+	/* double getPeriodPause()
+	 * PRE: None
+	 * POST: If the user has checked the "punctuation pause" preference, then
+	 * this method will return the period delay factor, otherwise it will return
+	 * 1 (i.e. no delay).
+	 */
 	private double getPeriodPause() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -319,6 +338,12 @@ public class MainActivity extends Activity implements
 			return 1;
 	}
 
+	/* double getCommaPause()
+	 * PRE: None
+	 * POST: If the user has checked the "punctuation pause" preference, then
+	 * this method will return the comma delay factor, otherwise it will return
+	 * 1 (i.e. no delay).
+	 */
 	private double getCommaPause() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -328,20 +353,34 @@ public class MainActivity extends Activity implements
 			return 1;
 	}
 
-	// Checks if user selected variable wpm
+	/* boolean getVariableWPM()
+	 * PRE: None
+	 * POST: Returns true if user has check "Variable WPM" preference, false
+	 * otherwise.
+	 */
 	private boolean getVariableWPM() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
 		return sharedPreferences.getBoolean("variable_wpm_checkbox", false);
 	}
 
-	// Checks if user selected time left
+	/* boolean getTimeLeft()
+	 * PRE: None
+	 * POST: Returns true if user has check "Show Time Left" preference, false
+	 * otherwise.
+	 */
 	private boolean getTimeLeft() {
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
 		return sharedPreferences.getBoolean("time_left_checkbox", true);
 	}
-
+	
+	/* long convertVariableWPM(int mWPM)
+	 * PRE: mWPM is the current WPM setting set by the user (or the default).
+	 * POST: Returns a delay factor to be used in postDelayed().
+	 * NOTE: If a word is 7 characters or longer than there will be an increased
+	 * delay proportional to the amount of characters more than 7 the word has.
+	 */
 	private long convertVariableWPM(int mWPM) {
 		if (words.get(i - 1).getData().length() > LONG_WORD) {
 			double factor;
@@ -351,6 +390,11 @@ public class MainActivity extends Activity implements
 			return convertWPM(mWPM);
 	}
 
+	/* void updateBackground()
+	 * PRE: None
+	 * POST: Sets the background color, progress bar, seek bar and font colors based
+	 * on the user preference of dark or light (with the default being a light background).
+	 */
 	@SuppressWarnings("ConstantConditions")
 	@SuppressLint("NewApi")
 	private void updateBackground() {
@@ -400,6 +444,13 @@ public class MainActivity extends Activity implements
 		}
 	}
 
+	/* void initSeekBar()
+	 * PRE: None
+	 * POST: Defines the WPM seekbar's behavior. When it is changed, by the user
+	 * scrubbing the thumb, the mWPM variable it updated (in increments of 10 WPM),
+	 * and the estimated time left is recalculated. All of this is done instantly 
+	 * as the user changes the WPM.
+	 */
 	private void initSeekBar() {
 		mSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
@@ -422,9 +473,14 @@ public class MainActivity extends Activity implements
 			}
 		});
 	}
-
+	
+	/* void initSeekWords()\
+	 * PRE: None
+	 * POST: Adds functionality to mReadView such that when a user clicks on the view (or the word),
+	 * a dialog appears with that word, and a seek bar to seek through the words in the reading material.
+	 * If the user hits OK, the 'i', mReadView and the progress bar are updated.
+	 */
 	private void initSeekWords() {
-		// Click on word to seek through reading
 		final int[] changeWord = { i };
 		mReadView.setOnClickListener(new View.OnClickListener() {
 
@@ -498,8 +554,16 @@ public class MainActivity extends Activity implements
 		});
 	}
 
+	
+	/* void initPlayButton()
+	 * PRE: none
+	 * POST: Manages what the play button does. If there is reading material to be read,
+	 * it will call run() to begin the speed reading, if the user reaches the last word,
+	 * it will pause and change to 'reset' and if the user presses it it will reset the 
+	 * reading. The play button changes to "Pause" while reading is in progress, and will
+	 * pause the reading if the user clicks on it.
+	 */
 	private void initPlayButton() {
-		// HANDLES PLAY AND DELAY, CALLS run()
 		mPlayButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -518,6 +582,7 @@ public class MainActivity extends Activity implements
 		});
 	}
 
+	
 	private void initRewindButton() {
 		// HANDLES PLAY AND DELAY, CALLS run()
 		mRewindButton.setOnClickListener(new View.OnClickListener() {
@@ -545,41 +610,6 @@ public class MainActivity extends Activity implements
 		});
 	}
 
-	//
-	// // First run dialog
-	// void firstRunDialog() {
-	// boolean firstrun = getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
-	// .getBoolean("firstrun", true);
-	// if (firstrun) {
-	// DialogInterface.OnClickListener dialogClickListener = new
-	// DialogInterface.OnClickListener() {
-	// @Override
-	// public void onClick(DialogInterface dialog, int which) {
-	// switch (which) {
-	// case DialogInterface.BUTTON_POSITIVE:
-	// // Yes button clicked
-	// getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
-	// .edit().putBoolean("firstrun", false).commit();
-	// break;
-	//
-	// case DialogInterface.BUTTON_NEGATIVE:
-	// // No button clicked
-	// getSharedPreferences(PREF_FIRST_RUN, MODE_PRIVATE)
-	// .edit().putBoolean("firstrun", true).commit();
-	// break;
-	// }
-	// }
-	// };
-	// AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	// builder.setTitle("Welcome to Spree");
-	// builder.setMessage(
-	// "Thanks for downloading Spree! You can add material by hitting the '+' button and then either pasting in material or going to the menu and adding a .epub file. You can also add material by sharing articles from other apps or even your browser via \"Add to Spree\". If you enjoy this app please review it, thanks!")
-	// .setPositiveButton("Got It", dialogClickListener)
-	// .setNegativeButton("Show Next Time", dialogClickListener)
-	// .show();
-	// }
-	// }
-	// rewinds current sentence
 	public void rewindSentence() {
 		boolean firstRewind = getSharedPreferences(PREF_FIRST_REWIND,
 				MODE_PRIVATE).getBoolean("firstrewind", true);
